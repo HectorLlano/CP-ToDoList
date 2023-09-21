@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+
+<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+    <div class="list-group">
+        <ul>
+            <% if (locals.toDoList) {%>
+                <% toDoList.forEach(element => {%>
+                    <% console.log(element) %>
+                    <li>
+                        <label class="list-group-item d-flex gap-3">
+                            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                            <form id="editForm" class="display-flex" method="get" action="/api/delete/<%= element._id %>">
+                                <span class="pt-1 pr-5 form-checked-content strikethrough"><strong><%= element.task %></strong></span>
+                                <button type="submit" class="delete-button">-</button>
+                            </form>
+                        </label>
+                    </li>
+                <% }); %>
+            <% }; %>
+
+            <li>
+                <label class="list-group-item d-flex gap-3 bg-body-tertiary">
+                    <input class="form-check-input form-check-input-placeholder bg-body-tertiary flex-shrink-0 pe-none" disabled="" type="checkbox" value="" style="font-size: 1.375em;">
+                    <form id="editForm" method="post" action="/api/post">
+                        <input class="pt-1 pr-5 add-task" name="newTask" type="text" placeholder="Add new task...">
+                        <button type="submit" class="add-button">+</button>
+                    </form>
+                </label>
+            </li>
+        </ul>
+    </div>
+  </div>
+
+<%- include("partials/footer.ejs") %>

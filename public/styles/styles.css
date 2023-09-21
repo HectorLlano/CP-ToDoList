@@ -1,0 +1,61 @@
+body {
+    background-color: antiquewhite;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.list-group {
+    width: 500px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: none;
+    color: darkgray;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    justify-content: end;
+}
+
+.delete-button:hover {
+    background-color: rgb(184, 47, 47);
+}
+
+.add-button:hover {
+    background-color: rgb(48, 48, 182);
+}
+
+.add-task {
+    border: none;
+    background: transparent;
+}
+
+input[type=checkbox]:checked + form span.strikethrough{
+    text-decoration: line-through;
+    color: darkgrey;
+}
+
+form{
+    width: 425px;
+}
+
+form input {
+    width: 375px;
+}
+
+form span {
+    width: 380px;
+}
+
+.display-flex {
+    display: flex;
+}
